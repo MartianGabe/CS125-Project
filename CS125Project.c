@@ -4,10 +4,11 @@
 *Gabriel
 *****************************************************************************/
 #include <stdio.h>
+#include <time.h>
 
 void sleep()
 {
-	
+	//Random chance of dying.
 }
 
 void investigate()
