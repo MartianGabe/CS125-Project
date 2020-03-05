@@ -13,41 +13,43 @@ void sleep() //Player chooses to sleep
 
 void investigate() //Player chooses to investigate
 {
-	char choice;
-	int item;
-	printf("Before you leave, would you like to take an item?(Y/N)");
-	scanf(" %c", &choice);
-	if(choice=='Y' || choice=='y' || choice=='N' || choice=='n')
+	int choice;
+	clearScreen();
+	int item=takeItem();
+	clearScreen();
+	do
 	{
-		do
+		printf("You exit your room and walk down the stairs, taking extra care to not make any noise.\nYou step onto the floor and turn down the hallway to see a silhouette, highlighted by the moonlight streaking in through the window.\n");
+		printf("The figure is tall, wide, and incredibly swole.\nThere's no way you can take them on in a fight.\nWhat do you do?\n");
+		printf("1-Hide in a closet.\n2-Walk closer towards the figure.");
+		scanf("%d", &choice);
+		switch(choice)
 		{
-			printf("What item would you like to take?\n1-Pocket knife.\n2-Baseball bat.\n3-Nevermind.");
-			scanf("%d", &item);
-			switch(item)
-			{
-				case 1:
-					printf("You grab your trusty pocket knife.\n");
-					break;
-				case 2:
-					printf("You grab your trusty baseball bat.\n");
-					break;
-				case 3:
-					printf("You leave your room empty-handed.\n");
-					break;
-				default:
-					printf("Invalid choice. Try again.\n");
-					break;
-			}
+			case 1:
+				hideCloset(item)
+				break;
+			case 2:
+				walkCloser(item);
+				break;
+			default:
+				printf("Invalid choice. Try again.\n");
+				break;
 		}
-		while(item<1 || item>3);
 	}
-	else
-	{
-		item=0;
-	}
+	while(choice<1 || choice>2);
 }
 
-void hideInCloset() //Player chooses to hide in closet
+void hideCloset(int item) //Player hides in closet downstairs
+{
+	printf("Hid in closet, item = %d.\n", item);
+}
+
+void walkCloser(int item) //Player walks closer towards figure
+{
+	printf("walked closer to figure like an idiot, item = %d\n", item);
+}
+
+void hideInCloset() //Player chooses to hide in closet in bedroom
 {
 	
 }
@@ -83,6 +85,43 @@ void listen() //Player chooses to listen
 	}
 	while(x<1 || x>3);
 	
+}
+
+int takeItem() //Ask player if they want to take an item.
+{
+	char choice;
+	int item;
+	printf("Before you leave, would you like to take an item?(Y/N)");
+	scanf(" %c", &choice);
+	if(choice=='Y' || choice=='y')
+	{
+		do
+		{
+			printf("What item would you like to take?\n1-Pocket knife.\n2-Baseball bat.\n3-Nevermind.");
+			scanf("%d", &item);
+			switch(item)
+			{
+				case 1:
+					printf("You grab your trusty pocket knife.\n");
+					break;
+				case 2:
+					printf("You grab your trusty baseball bat.\n");
+					break;
+				case 3:
+					printf("You leave your room empty-handed.\n");
+					break;
+				default:
+					printf("Invalid choice. Try again.\n");
+					break;
+			}
+		}
+		while(item<1 || item>3);
+	}
+	else
+	{
+		item=0;
+	}
+	return item;
 }
 
 void clearScreen() //Clears the screen
