@@ -85,15 +85,17 @@ void listen() //Player chooses to listen
 	
 }
 
-void clearScreen() //Clears the screen
+void clearScreen() //Clears Screen
 {
-	sleep(1);
-	printf("\e[2J\e[H");
+  sleep(1);
+  printf("\e[2J\e[H");
 }
+
 
 int main() //Main function
 {
 	int x;
+	
 	clearScreen();
 	do
 	{
@@ -119,3 +121,5 @@ int main() //Main function
 	while(x<1 || x>3);
     return 0;
 }
+
+//Comment
