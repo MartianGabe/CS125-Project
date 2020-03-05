@@ -6,12 +6,12 @@
 #include <stdio.h>
 #include <time.h>
 
-void sleep()
+void sleep() //Player chooses to sleep
 {
 	//Random chance of dying.
 }
 
-void investigate()
+void investigate() //Player chooses to investigate
 {
 	char choice;
 	int item;
@@ -47,12 +47,45 @@ void investigate()
 	}
 }
 
-void listen()
+void hideInCloset() //Player chooses to hide in closet
 {
 	
 }
 
-int main()
+void hideUnderBed() //Player chooses to hide under bed
+{
+	
+}
+
+void listen() //Player chooses to listen
+{
+	int x;
+	do
+	{
+		printf("You decide to stay in your bed and continue to listen... \nYou hear what sounds like footsteps walking towards your direction.\nWhat do you do?\n");
+		printf("1-Hide under the covers.\n2-Hide under the bed.\n3-Hide in the closet.\n");
+		scanf("%d", &x);
+		switch(x)
+		{
+			case 1:
+				printf("INSERT PLAYER LOSES\n"); //PLAYER LOSES
+				break;
+			case 2:
+				hideUnderBed();
+				break;
+			case 3:
+				hideInCloset();
+				break;
+			default:
+				printf("Invalid choice. Try again.\n");
+				break;
+		}
+	}
+	while(x<1 || x>3);
+	
+}
+
+int main() //Main function
 {
 	int x;
 	do
