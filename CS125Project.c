@@ -14,7 +14,18 @@ void clearScreen() //Clears Screen
 
 void sleep() //Player chooses to sleep
 {
-	//Random chance of dying.
+	char choice;
+	int dieinsleep;
+	srand(time(NULL));
+	dieinsleep = rand() %1+0; //Random chance of dying.
+	if (dieinsleep == 1){ // Player dies in sleep
+		printf("The killer slit your throat in your sleep/n"); 
+		printf("YOU LOSE");
+	}
+	else if (dieinsleep == 0){
+		
+	}
+	
 }
 
 void investigate() //Player chooses to investigate
@@ -96,7 +107,6 @@ void listen() //Player chooses to listen
 int main() //Main function
 {
 	int x;
-	
 	clearScreen();
 	do
 	{
