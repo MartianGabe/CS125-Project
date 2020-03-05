@@ -12,7 +12,7 @@ void clearScreen() //Clears Screen
   printf("\e[2J\e[H");
 }
 
-void sleep() //Player chooses to sleep
+void goToSleep() //Player chooses to sleep
 {
 	//Random chance of dying.
 }
