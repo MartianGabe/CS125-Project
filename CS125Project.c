@@ -6,6 +6,12 @@
 #include <stdio.h>
 #include <time.h>
 
+void clearScreen() //Clears Screen
+{
+  sleep(1);
+  printf("\e[2J\e[H");
+}
+
 void sleep() //Player chooses to sleep
 {
 	//Random chance of dying.
@@ -85,11 +91,6 @@ void listen() //Player chooses to listen
 	
 }
 
-void clearScreen() //Clears Screen
-{
-  sleep(1);
-  printf("\e[2J\e[H");
-}
 
 
 int main() //Main function
