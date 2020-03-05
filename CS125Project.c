@@ -12,18 +12,19 @@ void clearScreen() //Clears Screen
   printf("\e[2J\e[H");
 }
 
-void sleep() //Player chooses to sleep
+void goToSleep() //Player chooses to sleep
 {
 	//Random chance of dying.
 }
 
-void investigate() //Player chooses to investigate
+
+int getItem() //Player gets item
 {
 	char choice;
 	int item;
 	printf("Before you leave, would you like to take an item?(Y/N)");
 	scanf(" %c", &choice);
-	if(choice=='Y' || choice=='y' || choice=='N' || choice=='n')
+	if(choice=='Y' || choice=='y')
 	{
 		do
 		{
@@ -51,6 +52,13 @@ void investigate() //Player chooses to investigate
 	{
 		item=0;
 	}
+	return item;
+	
+}
+void investigate() //Player chooses to investigate
+{
+	int item = getItem();
+	printf("%d", item);
 }
 
 void hideInCloset() //Player chooses to hide in closet
@@ -60,7 +68,7 @@ void hideInCloset() //Player chooses to hide in closet
 
 void hideUnderBed() //Player chooses to hide under bed
 {
-	
+
 }
 
 void listen() //Player chooses to listen
@@ -106,7 +114,7 @@ int main() //Main function
 		switch(x)
 		{
 			case 1:
-				sleep();
+				goToSleep();
 				break;
 			case 2:
 				investigate();
