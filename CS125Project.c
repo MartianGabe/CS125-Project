@@ -85,9 +85,18 @@ void listen() //Player chooses to listen
 	
 }
 
+void clearScreen() //Clears Screen
+{
+  sleep(1);
+  printf("\e[2J\e[H");
+}
+
+
 int main() //Main function
 {
 	int x;
+	
+	clearScreen();
 	do
 	{
 		printf("You're sleeping soundly when suddenly you jolt awake.\nYou check your alarm clock: 2:37 AM.\nWhile wondering about what could have woken you, you hear a thud from downstairs.\nWhat do you do?\n");
