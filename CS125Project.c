@@ -6,27 +6,56 @@
 #include <stdio.h>
 #include <time.h>
 
+void death()
+{
+	int choice;
+	clearScreen();
+	do
+	{
+		printf("You died! Would you like to play again?\n");
+		printf("1-Yes\n2-No\n");
+		scanf("%d", &choice);
+		switch(choice)
+		{
+			case 1:
+				main();
+				break;
+			case 2:
+				break;
+			default:
+				printf("Invalid choice. Try again.\n");
+				break;
+		}
+	}
+	while(choice<1 || choice>2);
+}
+
 void sleep() //Player chooses to sleep
 {
 	//Random chance of dying.
 }
 
-void investigate() //Player chooses to investigate
+void investigate1() //Player chooses to investigate
+{
+	clearScreen();
+	item=takeItem();
+	investigate2(item);
+}
+
+void investigate2(int item);
 {
 	int choice;
-	clearScreen();
-	int item=takeItem();
 	clearScreen();
 	do
 	{
 		printf("You exit your room and walk down the stairs, taking extra care to not make any noise.\nYou step onto the floor and turn down the hallway to see a silhouette, highlighted by the moonlight streaking in through the window.\n");
 		printf("The figure is tall, wide, and incredibly swole.\nThere's no way you can take them on in a fight.\nWhat do you do?\n");
-		printf("1-Hide in a closet.\n2-Walk closer towards the figure.");
+		printf("1-Hide in the kitchen cabinet.\n2-Walk closer towards the figure.\n");
 		scanf("%d", &choice);
 		switch(choice)
 		{
 			case 1:
-				hideCloset(item)
+				hideCabinet(item)
 				break;
 			case 2:
 				walkCloser(item);
@@ -39,14 +68,89 @@ void investigate() //Player chooses to investigate
 	while(choice<1 || choice>2);
 }
 
-void hideCloset(int item) //Player hides in closet downstairs
+void hideCabinet(int item) //Player hides in kitchen cabinet
 {
-	printf("Hid in closet, item = %d.\n", item);
+	int choice;
+	clearScreen();
+	do
+	{
+		printf("You quickly duck into the kitchen cabinet before the intruder can turn around and see you.\nYou hear them start to move around.\nWhat do you do?\n");
+		printf("1-Wait and listen.\n2-Exit the cabinet.\n");
+		scanf("%d", &choice);
+		switch(choice)
+		{
+			case 1:
+				waitCabinet(item);
+				break;
+			case 2:
+				leaveCabinet();
+				break;
+			default:
+				printf("Invalid choice. Try again.\n");
+				break;
+		}
+	}
+	while(choice<1 || choice>2);
 }
+
+void waitCabinet(int item)
+{
+	int choice;
+	clearScreen();
+}
+
+void leaveCabinet();
+{
+	int choice;
+	int x;
+	clearScreen();
+	printf("You decide that hiding in the cabinet was a dumb idea and exit back into the hallway.\nYou shut the door and as you turn to check where the intruder is you bump right into them.\n");
+	printf("'Huh. Maybe I should have stayed in the cabinet for a bit longer', you think to yourself as you feel a knife sink into your chest.\n");
+	printf("Press any key to continue...\n");
+	x=scanf("%d", &choice);
+	if(x>0)
+	{
+		death();
+	}
+}	
 
 void walkCloser(int item) //Player walks closer towards figure
 {
-	printf("walked closer to figure like an idiot, item = %d\n", item);
+	int choice;
+	clearScreen();
+	do
+	{
+		printf("You walk closer to the figure as quietly as you can. They don't turn around to look at you, so it must be working.\nThey seem to be looking around your living room.\nProbably judging your taste in decorations.\n");
+		printf("WHat would you like to do next?\n1-Walk EVEN closer.\n2-Turn around and go back to the bottom of the stairs.\n);
+		scanf("%d", choice);
+		switch(choice)
+		{
+			case 1:
+				superClose();
+				break;
+			case 2:
+				investigate2(item);
+				break;
+			default:
+				printf("Invalid choice. Try again.\n");
+				break;
+		}
+	}
+	while(choice<1 || choice>2);
+}
+
+void superClose()
+{
+	int choice;
+	int x;
+	printf("You walk closer to the figure until you can reach out and touch them.\nWhich you do.\nYou tap them on the shoulder and they whip around to look at you, confused.\n");
+	printf("You smile and give them a little wave.\nThey stab you in the chest.\nThis is not the best situation to make new friends.\n");
+	printf("Press any key to continue...");
+	x=scanf("%d", choice);
+	if(x>0)
+	{
+		death();
+	}
 }
 
 void hideInCloset() //Player chooses to hide in closet in bedroom
@@ -145,7 +249,7 @@ int main() //Main function
 				sleep();
 				break;
 			case 2:
-				investigate();
+				investigate1();
 				break;
 			case 3:
 				listen();
