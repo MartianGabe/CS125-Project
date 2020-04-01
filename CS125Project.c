@@ -31,8 +31,10 @@ void death()
 }
 
 void sleep() //Player chooses to sleep
+void clearScreen() //Clears Screen
 {
-	//Random chance of dying.
+  sleep(1);
+  printf("\e[2J\e[H");
 }
 
 void investigate1() //Player chooses to investigate
@@ -47,6 +49,30 @@ void investigate2(int item);
 	int choice;
 	clearScreen();
 	do
+void goToSleep() //Player chooses to sleep
+{
+	char choice;
+	int dieinsleep;
+	srand(time(NULL));
+	dieinsleep = rand() %1+0; //Random chance of dying.
+	if (dieinsleep == 1){ // Player dies in sleep
+		printf("The killer slit your throat in your sleep/n"); 
+		printf("YOU LOSE");
+	}
+	else if (dieinsleep == 0){
+		
+	}
+	
+}
+
+
+int getItem() //Player gets item
+{
+	char choice;
+	int item;
+	printf("Before you leave, would you like to take an item?(Y/N)");
+	scanf(" %c", &choice);
+	if(choice=='Y' || choice=='y')
 	{
 		printf("You exit your room and walk down the stairs, taking extra care to not make any noise.\nYou step onto the floor and turn down the hallway to see a silhouette, highlighted by the moonlight streaking in through the window.\n");
 		printf("The figure is tall, wide, and incredibly swole.\nThere's no way you can take them on in a fight.\nWhat do you do?\n");
@@ -151,6 +177,13 @@ void superClose()
 	{
 		death();
 	}
+	return item;
+	
+}
+void investigate() //Player chooses to investigate
+{
+	int item = getItem();
+	printf("%d", item);
 }
 
 void hideInCloset() //Player chooses to hide in closet in bedroom
@@ -160,7 +193,7 @@ void hideInCloset() //Player chooses to hide in closet in bedroom
 
 void hideUnderBed() //Player chooses to hide under bed
 {
-	
+
 }
 
 void listen() //Player chooses to listen
@@ -234,6 +267,7 @@ void clearScreen() //Clears the screen
 	printf("\e[2J\e[H");
 }
 
+
 int main() //Main function
 {
 	int x;
@@ -246,7 +280,7 @@ int main() //Main function
 		switch(x)
 		{
 			case 1:
-				sleep();
+				goToSleep();
 				break;
 			case 2:
 				investigate1();
@@ -262,3 +296,4 @@ int main() //Main function
 	while(x<1 || x>3);
     return 0;
 }
+
