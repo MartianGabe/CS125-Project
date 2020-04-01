@@ -16,7 +16,7 @@ void goToSleep() //Player chooses to sleep
 {
 	//Random chance of dying.
 }
-
+//hi
 
 int getItem() //Player gets item
 {
@@ -53,7 +53,7 @@ int getItem() //Player gets item
 		item=0;
 	}
 	return item;
-	
+
 }
 void investigate() //Player chooses to investigate
 {
@@ -63,7 +63,7 @@ void investigate() //Player chooses to investigate
 
 void hideInCloset() //Player chooses to hide in closet
 {
-	
+
 }
 
 void hideUnderBed() //Player chooses to hide under bed
@@ -96,7 +96,7 @@ void listen() //Player chooses to listen
 		}
 	}
 	while(x<1 || x>3);
-	
+
 }
 
 
@@ -104,7 +104,7 @@ void listen() //Player chooses to listen
 int main() //Main function
 {
 	int x;
-	
+
 	clearScreen();
 	do
 	{
@@ -130,4 +130,3 @@ int main() //Main function
 	while(x<1 || x>3);
     return 0;
 }
-
