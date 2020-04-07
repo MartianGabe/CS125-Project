@@ -82,7 +82,7 @@ void listen() //Player chooses to listen
 		switch(x)
 		{
 			case 1:
-				printf("INSERT PLAYER LOSES\n"); //PLAYER LOSES
+				printf("As you climb under your covers, you hear someone come through the door.\nPraying that whoever it is won't notice you, the stranger pulls the covers away and you can see a knife in his hand.\nUnable to defend yourself, the stranger stabs you with the knife multiple times.\nYou died...\n"); //PLAYER LOSES
 				break;
 			case 2:
 				hideUnderBed();
