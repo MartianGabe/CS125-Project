@@ -16,7 +16,7 @@ void goToSleep() //Player chooses to sleep
 {
 	//Random chance of dying.
 }
-//hi
+
 
 int getItem() //Player gets item
 {
