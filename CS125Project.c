@@ -12,6 +12,14 @@ void clearScreen() //Clears Screen
   printf("\e[2J\e[H");
 }
 
+//GO TO SLEEP FUNCTIONS
+void sleep();
+void backtosleep();
+void climbdownwindow(int);
+void makerope();
+void jumpintobushes(int);
+void limpaway();
+
 void sleep() //Player chooses to sleep
 {
 	char choice;
@@ -19,11 +27,11 @@ void sleep() //Player chooses to sleep
 	srand(time(NULL));
 	dieinsleep = rand() %1+0; //Random chance of dying.
 	if (dieinsleep == 1){ // Player dies in sleep
-		printf("The killer slit your throat in your sleep/n"); 
+		printf("You sleep soundly until you realize that you can't wake up sleep/n"); 
 		printf("YOU LOSE");
 	}
 	else if (dieinsleep == 0){
-		
+		printf("Suprisingly
 	}
 	
 }
@@ -104,32 +112,5 @@ void listen() //Player chooses to listen
 
 
 
-int main() //Main function
-{
-	int x;
-	clearScreen();
-	do
-	{
-		printf("You're sleeping soundly when suddenly you jolt awake.\nYou check your alarm clock: 2:37 AM.\nWhile wondering about what could have woken you, you hear a thud from downstairs.\nWhat do you do?\n");
-		printf("1-Go back to sleep.\n2-Go downstairs and investigate.\n3-Wait and listen some more.\n");
-		scanf("%d", &x);
-		switch(x)
-		{
-			case 1:
-				sleep();
-				break;
-			case 2:
-				investigate();
-				break;
-			case 3:
-				listen();
-				break;
-			default:
-				printf("Invalid choice. Try again.\n");
-				break;
-		}
-	}
-	while(x<1 || x>3);
-    return 0;
-}
+
 
