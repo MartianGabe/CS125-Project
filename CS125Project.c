@@ -27,11 +27,11 @@ void sleep() //Player chooses to sleep
 	srand(time(NULL));
 	dieinsleep = rand() %1+0; //Random chance of dying.
 	if (dieinsleep == 1){ // Player dies in sleep
-		printf("You sleep soundly until you realize that you can't wake up sleep/n"); 
-		printf("YOU LOSE");
+		printf("You sleep soundly until you realize that you can't wake up from your slumber.Turns out the killer entered your room and killed you in your sleep./n"); 
+		printf("");
 	}
 	else if (dieinsleep == 0){
-		printf("Suprisingly
+		printf("You somehow wake up
 	}
 	
 }
