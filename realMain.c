@@ -243,7 +243,7 @@ void jumpintobushes(int item) //Player chooses to jump out of the window
 	int choice;
 	clearScreen();
 	printf("You open up the window and dangle your legs over the ledge.\nYou start having second thoughts about this idea.\nYou sit there so long doubting this jump that the door behind you creaks open.\nYou turn around and see a large figure rushing towards you.\n");
-	printf("You panic and jump off the ledge, falling onto the bushes below.\nYou quickly fall through the branches, landing right on your leg and feeling it SNAP.\nBut before you can think about how the agony of breaking your leg, you hear barking coming closer from around the corner of the house.\n");
+	printf("You panic and jump off the ledge, falling onto the bushes below.\nYou quickly fall through the branches, landing right on your leg and feeling it SNAP.\nBut before you can think about the agony of breaking your leg, you hear barking coming closer from around the corner of the house.\n");
 	printf("From around the corner comes a large black dog charging at you, not a nice looking dog but an actual hellhound with red eyes.\nWhat do you do?\n");
 	do
 	{
