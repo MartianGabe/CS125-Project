@@ -269,8 +269,8 @@ void limpaway() //Player limps away from chasing dog
 {
 	int choice;
 	clearScreen();
-	printf("You try limping away, each step causing agony but the adrenaline from the fall and the chasing dog keeps you going.\n Before you can get more than a dozen limps away from the danger, you feel a sharp pain on your other leg as the dog sinks its teeth in.\n");
-	printf("Falling to the ground, you lay hepless as the dog mauls you to death\n.);
+	printf("You try limping away, each step causing agony but the adrenaline from the fall and the chasing dog keeps you going.\nBefore you can get more than a dozen limps away from the danger, you feel a sharp pain on your other leg as the dog sinks its teeth in.\n");
+	printf("Falling to the ground, you lay hepless as the dog mauls you to death\n.");
 	do
 	{
 		printf("You died! Would you like to play again?\n");
