@@ -106,7 +106,7 @@ void goToSleep() //Player decides to sleep
 	srand(time(NULL));
 	dieinsleep = rand() %2+0; //50/50 Random chance of dying.
 	if (dieinsleep == 1){ // Player dies in sleep
-		printf("You fall back asleep soundly until you realize that you can't wake up from your slumber. Turns out the killer entered your room and killed you in your sleep./n"); 
+		printf("You fall back asleep soundly until you realize that you can't wake up from your slumber.\nTurns out the killer entered your room and killed you in your sleep.\n"); 
 		do
 		{
 			printf("You died! Would you like to play again?\n");
@@ -129,7 +129,7 @@ void goToSleep() //Player decides to sleep
 	else if (dieinsleep == 0){ // Player does not die in sleep
 		do
 		{
-			printf("By some miracle you wake up after making the smart decision of falling back asleep after hearing a noise in your house even though no one else is supposed to be home.");
+			printf("By some miracle you wake up after making the smart decision of falling back asleep after hearing a noise in your house even though no one else is supposed to be home.\n");
 			printf("You hear noises upstairs in the same floor your bedroom is on.\nNow you know for sure someone or something is making those noises.\n");
 			printf("There seem to be footsteps outside of your door coming closer and closer....\nWhat do you do?\n");
 			printf("1-Go back to sleep.\n2-Climb down the window.\n");
@@ -244,7 +244,7 @@ void jumpintobushes(int item) //Player chooses to jump out of the window
 	clearScreen();
 	printf("You open up the window and dangle your legs over the ledge.\nYou start having second thoughts about this idea.\nYou sit there so long doubting this jump that the door behind you creaks open.\nYou turn around and see a large figure rushing towards you.\n");
 	printf("You panic and jump off the ledge, falling onto the bushes below.\nYou quickly fall through the branches, landing right on your leg and feeling it SNAP.\nBefore you can think about how much the agony of breaking your leg, you hear barking coming closer from around the corner of the house.\n");
-	printf("From around the corner comes a large black dog charging at you, not a nice looking dog but an actual hellhound.\nWhat do you do?\n);
+	printf("From around the corner comes a large black dog charging at you, not a nice looking dog but an actual hellhound.\nWhat do you do?\n");
 	do
 	{
 		printf("1-Limp away with your injury\n2-Take on the dog\n");
@@ -269,7 +269,7 @@ void limpaway() //Player limps away from chasing dog
 {
 	int choice;
 	clearScreen();
-	printf("You try limping away, each step causing agony but the adrenaline from the fall and the chasing dog keeps you going.\n Before you can get more than a dozen limps away from the danger, you feel a sharp pain on your other leg as the dog sinks its teeth in.\n);
+	printf("You try limping away, each step causing agony but the adrenaline from the fall and the chasing dog keeps you going.\n Before you can get more than a dozen limps away from the danger, you feel a sharp pain on your other leg as the dog sinks its teeth in.\n");
 	printf("Falling to the ground, you lay hepless as the dog mauls you to death\n.);
 	do
 	{
