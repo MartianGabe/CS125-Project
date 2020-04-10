@@ -14,29 +14,21 @@ void clearScreen() //Clears Screen
 
 //GO TO SLEEP FUNCTIONS
 void sleep();
-void sleepitem(int);
 void backtosleep();
+void climbdownwindowitem();
 void climbdownwindow(int);
 void makerope();
 void jumpintobushes(int);
 void limpaway();
 void jumpfightdog(int);
 
-void sleep() //Player chooses to sleep
-{
-	int item;
-	clearScreen();
-	item=takeItem();
-	investigate2(item);
-}
-
-void sleepitem(int item) //Player decides to sleep
+void sleep() //Player decides to sleep
 {
 	int choice;
 	int dieinsleep;
 	clearScreen();
 	srand(time(NULL));
-	dieinsleep = rand() %2+0; //Random chance of dying.
+	dieinsleep = rand() %2+0; //50/50 Random chance of dying.
 	if (dieinsleep == 1){ // Player dies in sleep
 		printf("You fall back asleep soundly until you realize that you can't wake up from your slumber. Turns out the killer entered your room and killed you in your sleep./n"); 
 		do
@@ -72,7 +64,7 @@ void sleepitem(int item) //Player decides to sleep
 					backtosleep();
 					break;
 				case 2:
-					climbdownwindow(item);
+					climbdownwindowitem();
 					break;
 				default:
 					printf("Invalid choice. Try again. \n");
@@ -108,6 +100,14 @@ void backtosleep() // Player chooses to go back to sleep again
 		}
 	}
 	while(choice!=1 && choice!=2);
+}
+
+void climbdownwindowitem() //Player chooses to investigate
+{
+    int item;
+    clearScreen();
+    item=takeItem();
+    climbdownwindow(item);
 }
 
 void climbdownwindow(int item) //Player chooses to climb down the window
@@ -219,23 +219,57 @@ void jumpfightdog(int item)
 {
 	int choice;
 	clearScreen();
-
-	do
-	{
-		printf("You escape! Would you like to play again?\n");
-		printf("1-Yes\n2-No\n");
-		scanf("%d", &choice);
-		switch(choice)
-		{
-			case 1:
-				main();
-				break;
-			case 2:
-				break;
-			default:
-				printf("Invalid choice. Try again. \n");
-				break;
-		}
-	}
-	while(choice!=1 && choice!=2);
+    if (item == 3 || item == 0)//If player does not have item
+    {
+        printf("You attempt to fight the dog but you realise that this dog is very strong!\nAs the dog bites your other healthy leg, you can see the killer is no longer at the window.\nYou break free from the dog and try to crawl away, but you hear footsteps approaching you and you get stabbed by the killers knife in the back.\n");
+        do
+        {
+            printf("You died! Would you like to play again?\n");
+            printf("1-Yes\n2-No\n");
+            scanf("%d", &choice);
+            switch(choice)
+            {
+                case 1:
+                    main();
+                    break;
+                case 2:
+                    break;
+                default:
+                    printf("Invalid choice. Try again.\n");
+                    break;
+            }
+        }
+        while(choice!=1 && choice!=2);
+    }
+    else
+    {
+        printf("You attempt to fight the dog but you quickly realise that this dog is very strong!\n");
+        if (item == 1)//If player has pocket knife
+        {
+            printf("Luckily, you brought a pocket knife with you...\nYou use the knife against the dog and quickly break free!\n");
+        }
+        else if (item == 2)//If player has baseball bat
+        {
+            printf("Luckily, you brought a baseball bat with you...\nYou use the knife against the dog and quickly break free!\n");
+        }
+        printf("As you quickly limp away, you can see the killer in the distance standing in the window, knowing that he won't be able to catch up to you...\n");
+        do
+        {
+            printf("You escaped! Would you like to play again?\n");
+            printf("1-Yes\n2-No\n");
+            scanf("%d", &choice);
+            switch(choice)
+            {
+                case 1:
+                    main();
+                    break;
+                case 2:
+                    break;
+                default:
+                    printf("Invalid choice. Try again.\n");
+                    break;
+            }
+        }
+        while(choice!=1 && choice!=2);
+    }
 }
