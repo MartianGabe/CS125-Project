@@ -1,3 +1,18 @@
+/***********************************************
+* Group Members: Emily Gross
+*			     Cody Park
+*				 Gabriel Pulido
+*
+* Project name: Escape the Killer
+*
+* Purpose: This file creates a story-driven
+* "choose your own adventure" type game. There are 
+* several paths the player can take which leads to
+* different endings. The goal of the game is for 
+* the player to avoid dying by the killer.
+*
+* Sources: In-class notes
+**************************************************/
 #include <stdio.h>
 #include <time.h>
 
@@ -156,7 +171,7 @@ void backtosleep() // Player chooses to go back to sleep again
 {
 	int choice;
 	clearScreen();
-	printf("You make the wise decision of trying to fall back sleep.\nBut before you can get back to your slumber, your door creaks open and you jolt up and look towards the door.\n");
+	printf("You make the wise decision of trying to fall back asleep.\nBut before you can get back to your slumber, your door creaks open and you jolt up and look towards the door.\n");
 	printf("There stands a tall figure, staring at your from the darkness.\n Before you can scream the figure rushes over and you remain helpless as a knife enters your chest.\n"); 
 	do
 	{
@@ -191,7 +206,7 @@ void climbdownwindow(int item) //Player chooses to climb down the window
 	int choice;
 	clearScreen();
 	printf("As the footsteps begin approaching closer, you decide to climb down the window from the second story.\nYou see that there are bushes right underneath your window.\nYou think that maybe the bushes could cushion your fall if you try to jump\n");
-	printf("However, you also have plenty of shirts in your drawer next to the window.\nYou think that these shirts could make for a lengthy and usefull rope that you could use to climb down.\nWhat do you do?\n"); 
+	printf("However, you also have plenty of shirts in your drawer next to the window.\nYou think that these shirts could make for a lengthy and useful rope that you could use to climb down.\nWhat do you do?\n"); 
 	do
 	{
 		printf("1-Jump from your window into the bushes below\n2-Make a rope out of shirts\n");
@@ -297,7 +312,7 @@ void jumpfightdog(int item) //Player fights dog after jumping out of window
 	clearScreen();
     if (item == 3 || item == 0)//If player does not have item
     {
-        printf("You attempt to fight the dog but you realise that this dog is very strong!\nAs the dog bites your other healthy leg, you can see the killer is no longer at the window.\nYou break free from the dog and try to crawl away, but you hear footsteps approaching you and you get stabbed by the killers knife in the back.\n");
+        printf("You attempt to fight the dog but you realize that this dog is very strong!\nAs the dog bites your other healthy leg, you can see the killer is no longer at the window.\nYou break free from the dog and try to crawl away, but you hear footsteps approaching you and you get stabbed by the killers knife in the back.\n");
         do
         {
             printf("You died! Would you like to play again?\n");
@@ -319,7 +334,7 @@ void jumpfightdog(int item) //Player fights dog after jumping out of window
     }
     else
     {
-        printf("You attempt to fight the dog but you quickly realise that this dog is very strong!\n");
+        printf("You attempt to fight the dog but you quickly realize that this dog is very strong!\n");
         if (item == 1)//If player has pocket knife
         {
             printf("Luckily, you brought a pocket knife with you...\nYou use the knife against the dog and quickly break free!\n");
@@ -762,7 +777,7 @@ void fightDog2(int item)//When at the door, the player fights the dog
     int choice;
     if (item == 3 || item == 0)//If player does not have item
     {
-        printf("You attempt to fight the dog but you realise that dogs are stronger than they look!\nAs the dog bites you, you can see the killer approaching you from behind.\nYou break free from the dog but the killer eventually catches up to you, stabbing you in the back.\n");
+        printf("You attempt to fight the dog but you realize that dogs are stronger than they look!\nAs the dog bites you, you can see the killer approaching you from behind.\nYou break free from the dog but the killer eventually catches up to you, stabbing you in the back.\n");
         do
         {
             printf("You died! Would you like to play again?\n");
@@ -784,7 +799,7 @@ void fightDog2(int item)//When at the door, the player fights the dog
     }
     else
     {
-        printf("You attempt to fight the dog but you quickly realise that dogs are stronger than they appear!\n");
+        printf("You attempt to fight the dog but you quickly realize that dogs are stronger than they appear!\n");
         if (item == 1)//If player has pocket knife
         {
             printf("Luckily, you brought a pocket knife with you...\nYou use the knife against the dog and finally break free!\n");
@@ -1168,6 +1183,8 @@ int main() //Main function
     clearScreen();
     do
     {
+		printf("Instructions: Input the correct values when prompted as you continue the story.\nThis is a story-driven game that changes based on your decisions.\nEnter control+c if you wish to exit at any time.\n \n");
+		printf("PREFACE:\n");
         printf("You're sleeping soundly when suddenly you jolt awake.\nYou check your alarm clock: 2:37 AM.\nWhile wondering about what could have woken you, you hear a thud from downstairs.\nWhat do you do?\n");
         printf("1-Go back to sleep.\n2-Go downstairs and investigate.\n3-Wait and listen some more.\n");
         scanf("%d", &x);
